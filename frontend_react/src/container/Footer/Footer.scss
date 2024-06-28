@@ -1,0 +1,127 @@
+.app__footer{
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+}
+
+.app__footer-cards{
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    margin: 4rem 2rem 2rem;
+
+    .app__footer-card{
+        min-width: 290px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #F5F7F8;
+        transition: all 0.3s ease-in-out;
+
+        img{
+            width: 40px;
+            height: 40px;
+            margin: 0 0.7rem;
+        }
+
+        p{
+            font-weight: 600;
+        }
+
+        a{
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        &:hover{
+            box-shadow: rgba(98, 114, 84, 0.602) 0px 2px 6px;
+        }
+
+        @media screen and (max-width: 450px) {
+            width: 100%;
+            
+        }
+
+      
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        
+    }
+}
+
+.app__footer-form{
+    width: 60%;
+    flex-direction: column;
+    margin: 1rem 2rem;
+
+    div:not(.buttons){
+        width: 100%;
+        flex-direction: column;
+        margin: 0.75rem 0;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: #F5F7F8;
+        transition: all 0.3s ease-in-out;
+
+        input, textarea{
+            width: 100%;
+            padding: 0.95rem;
+            border: none;
+            border-radius: 7px;
+            background-color: #F5F7F8;
+             
+            font-family: var(--font-base);
+            color: var(--gray-color);
+            outline: none;
+        }
+
+        textarea{
+            height: 170px;
+        }
+
+        &:hover{
+            box-shadow: rgba(98, 114, 84, 0.602) 0px 1px 2px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin: 1rem 0;
+        
+    }
+}
+
+.buttons{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-evenly;
+     align-items: center;
+     gap: 10px;
+     width: 100%;
+     margin-top: 2rem;
+
+    button{
+        width: max-content;
+        height: max-content;
+        font-size: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        border: none;
+        background-color: var(--gray-color);
+        color:white;
+        font-weight: 500;
+        outline: none;
+        cursor: pointer;
+    }
+    
+}
