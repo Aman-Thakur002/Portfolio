@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./Navbar.scss";
 import { images } from "../../constants";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
@@ -6,11 +6,37 @@ import { motion } from "framer-motion";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
+  const logoRef = useRef(null); // Reference to the logo element
+
+  const handleLogoClick = (e) => {
+    if (e.key === "p") {
+      e.preventDefault(); 
+
+      
+      window.open("https://aman-portfolio-sanity-studio.netlify.app", "_blank");
+    }
+  };
+
+  const handleLogoFocus = () => {
+    logoRef.current.blur(); // Remove focus from logo when 'p' is pressed
+  };
 
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.logo} alt="logo" />
+        <img
+          src={images.logo}
+          alt="logo"
+          ref={logoRef}
+          onClick={handleLogoClick}
+          onKeyDown={(e) => {
+            if (e.key === "p") {
+              handleLogoClick(e);
+              handleLogoFocus();
+            }
+          }}
+          tabIndex="0" // Ensure the image is focusable
+        />
       </div>
       <ul className="app__navbar-links">
         {["Home", "About", "Work", "Skills", "Contact"].map((item) => (
